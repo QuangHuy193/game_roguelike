@@ -13,6 +13,6 @@ nguyên tắc thiết kế:
 - hệ thống thiên phú (mở khi tài khoản đạt cấp 3) dùng vàng để nâng cấp, mỗi giai đoạn cần nâng tấn công, máu, thủ lên cấp 10 để qua giai đoạn tiếp,
 mỗi 2 giai đoạn sẽ có thiên phú phụ trợ cần pha lê đỏ để nâng
 
-yêu cầu mới
+yêu cầu mới (đã chạy)
 - thêm nút để xem tất cả chỉ số của nhân vật ở mục trang bị, chia ra thành chỉ số từ trang bị, chỉ số từ thiên phú, chỉ số từ anh hùng, tổng chỉ số
 - trong trận chiến các đòn crit sẽhiện  số sát thương màu đỏ và to hơn các đòn đánh thường 1 chút

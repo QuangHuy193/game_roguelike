@@ -18,7 +18,12 @@ buy(k){const D=G.D,h=G.heroes[k];if(D.gem<h.cost)return alert('Không đủ kim 
 pick(k){G.D.hero=k;G.save();this.draw()},
 e(){const D=G.D,it=(x,i)=>{const r=G.rar[x.r],s=G.slots[x.s];return`<div class=it style="border-color:${r[1]};color:${r[1]}" ${i>=0?`onclick="G.ui.wear(${i})"`:''}>${s[0]}<br>${s[1]}<br>${r[0]}<br><small>${Object.entries(G.itemStat(x)).map(([k,v])=>G.ic[k]+v).join(' ')}</small></div>`};
  const sl=Object.keys(G.slots).map(k=>D.eq[k]?it(D.eq[k],-1):`<div class=it style="border-color:#555;color:#777">${G.slots[k][0]}<br>${G.slots[k][1]}<br>Trống</div>`).join('');
- return`<b>Đang mặc</b><div class=grid style="margin:8px 0 14px">${sl}</div><b>Kho (${D.inv.length}) </b> <button class=b onclick="G.ui.sell()">Bán tất cả</button><p style="color:#99a;font-size:12px;margin:6px 0">Chạm vào đồ trong kho để mặc.</p><div class=grid>${D.inv.map(it).join('')}</div>`},
+ return`<button class=b onclick="G.ui.tog()">📊 ${this.sp?'Ẩn':'Xem'} chỉ số nhân vật</button>${this.sp?this.sheet():''}<div style="height:12px"></div><b>Đang mặc</b><div class=grid style="margin:8px 0 14px">${sl}</div><b>Kho (${D.inv.length}) </b> <button class=b onclick="G.ui.sell()">Bán tất cả</button><p style="color:#99a;font-size:12px;margin:6px 0">Chạm vào đồ trong kho để mặc.</p><div class=grid>${D.inv.map(it).join('')}</div>`},
+tog(){this.sp=!this.sp;this.draw()},
+sheet(){const q=G.parts(),r=v=>+v.toFixed(1),n=v=>v?r(v):'–',pc=v=>v?r(v*100)+'%':'–',tot=k=>q.h[k]+q.e[k]+q.t[k];
+ const rows=[['❤️ Máu','hp'],['⚔️ Công','atk'],['🛡️ Thủ','def']].map(([m,k])=>[m,r(q.h[k]),n(q.e[k]),n(q.t[k]),r(tot(k))]);
+ rows.push(['🎯 Bạo kích',pc(q.h.crit),'–',pc(q.t.crit),pc(q.h.crit+q.t.crit)],['⚡ Tốc đánh/giây',r(q.h.as),'–',pc(q.t.as),r(q.h.as*(1+q.t.as))],['💚 Hồi máu/giây','–','–',pc(q.t.reg),pc(q.t.reg)],['💰 Vàng thêm','–','–',pc(q.t.gold),pc(q.t.gold)]);
+ return`<table class=st><tr><th></th><th>Anh hùng</th><th>Trang bị</th><th>Thiên phú</th><th>Tổng</th></tr>${rows.map(a=>`<tr>${a.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</table>`},
 wear(i){const D=G.D,x=D.inv.splice(i,1)[0];if(D.eq[x.s])D.inv.push(D.eq[x.s]);D.eq[x.s]=x;G.save();this.draw()},
 sell(){const D=G.D;D.gold+=D.inv.reduce((a,x)=>a+(x.r+1)*80*x.c,0);D.inv=[];G.save();this.draw()},
 t(){const D=G.D;let h='<p style="color:#99a;font-size:12px;margin-bottom:8px">Nâng Công, Máu, Thủ lên cấp 10 để mở giai đoạn kế. Mỗi 2 giai đoạn có thiên phú phụ trợ dùng pha lê đỏ.</p>';
