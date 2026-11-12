@@ -14,3 +14,5 @@ nguyên tắc thiết kế:
 mỗi 2 giai đoạn sẽ có thiên phú phụ trợ cần pha lê đỏ để nâng
 
 yêu cầu mới
+- thêm nút để xem tất cả chỉ số của nhân vật ở mục trang bị, chia ra thành chỉ số từ trang bị, chỉ số từ thiên phú, chỉ số từ anh hùng, tổng chỉ số
+- trong trận chiến các đòn crit sẽhiện  số sát thương màu đỏ và to hơn các đòn đánh thường 1 chút
