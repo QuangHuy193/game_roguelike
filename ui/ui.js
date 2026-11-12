@@ -1,5 +1,5 @@
 G.ui={tab:'b',sel:1,
-init(){G.load();this.sel=G.D.ch;if(!G.D.hero)this.tab='h';this.draw()},
+init(){G.load();Object.values(G.heroes).forEach(h=>G.pic(h.img));this.sel=G.D.ch;if(!G.D.hero)this.tab='h';this.draw()},
 go(t){if(t=='e'&&G.D.lv<2||t=='t'&&G.D.lv<3)return alert('Chưa mở khóa! Cần tài khoản cấp '+(t=='e'?2:3));this.tab=t;this.draw()},
 draw(){const D=G.D,$=i=>document.getElementById(i);
  $('top').innerHTML=`<span>⭐ Cấp ${D.lv}</span><span>🪙 ${D.gold}</span><span>💎 ${D.gem}</span><span>🔴 ${D.rc}</span><div class=bar><i style="width:${D.exp/G.need(D.lv)*100}%"></i></div>`;
@@ -7,13 +7,13 @@ draw(){const D=G.D,$=i=>document.getElementById(i);
  $('main').innerHTML=this[this.tab]()},
 b(){const D=G.D,h=G.heroes[D.hero];if(!h)return'<div class=card>Hãy mua anh hùng ở tab Anh hùng để bắt đầu.</div>';
  const s=G.stats(),n=Math.min(30,8+4*this.sel);
- return`<div class=card style="text-align:center"><div style="font-size:64px">${h.ic}</div><b>${h.n}</b><br>❤️ ${s.hp|0} &nbsp; ⚔️ ${s.atk|0} &nbsp; 🛡️ ${s.def|0}</div>
+ return`<div class=card style="text-align:center"><div>${G.art(h,230)}</div><b>${h.n}</b><br>❤️ ${s.hp|0} &nbsp; ⚔️ ${s.atk|0} &nbsp; 🛡️ ${s.def|0}</div>
  <div class=card style="text-align:center"><button class=b onclick="G.ui.chp(-1)">◀</button> &nbsp;<b>Chương ${this.sel}</b>&nbsp; <button class=b onclick="G.ui.chp(1)">▶</button><p style="margin:10px 0">${n} phòng, boss ở phòng cuối</p><button class=b style="font-size:18px;padding:12px 28px" onclick="G.ui.play()">VÀO CHIẾN</button></div>
  <p style="color:#99a;font-size:12px">Kéo ngón tay/chuột (hoặc WASD, phím mũi tên) để di chuyển. Đứng yên là tự động bắn.</p>`},
 chp(d){this.sel=Math.max(1,Math.min(G.D.ch,this.sel+d));this.draw()},
 play(){document.getElementById('bt').classList.remove('hide');G.battle.start(this.sel)},
 h(){return Object.entries(G.heroes).map(([k,h])=>{const o=G.D.own.includes(k),u=G.D.hero==k;
- return`<div class=card style="display:flex;gap:10px;align-items:center"><span style="font-size:42px">${h.ic}</span><div style="flex:1"><b>${h.n}</b><br><small>${h.d}<br>❤️${h.hp} ⚔️${h.atk} 🛡️${h.def}</small></div>${o?`<button class=b ${u?'disabled':''} onclick="G.ui.pick('${k}')">${u?'Đang dùng':'Chọn'}</button>`:`<button class=b onclick="G.ui.buy('${k}')">💎 ${h.cost}</button>`}</div>`}).join('')},
+ return`<div class=card style="display:flex;gap:10px;align-items:center">${G.art(h,84)}<div style="flex:1"><b>${h.n}</b><br><small>${h.d}<br>❤️${h.hp} ⚔️${h.atk} 🛡️${h.def} 🎯${h.range}</small></div>${o?`<button class=b ${u?'disabled':''} onclick="G.ui.pick('${k}')">${u?'Đang dùng':'Chọn'}</button>`:`<button class=b onclick="G.ui.buy('${k}')">💎 ${h.cost}</button>`}</div>`}).join('')},
 buy(k){const D=G.D,h=G.heroes[k];if(D.gem<h.cost)return alert('Không đủ kim cương');D.gem-=h.cost;D.own.push(k);D.hero=D.hero||k;G.save();this.draw()},
 pick(k){G.D.hero=k;G.save();this.draw()},
 e(){const D=G.D,it=(x,i)=>{const r=G.rar[x.r],s=G.slots[x.s];return`<div class=it style="border-color:${r[1]};color:${r[1]}" ${i>=0?`onclick="G.ui.wear(${i})"`:''}>${s[0]}<br>${s[1]}<br>${r[0]}<br><small>${Object.entries(G.itemStat(x)).map(([k,v])=>G.ic[k]+v).join(' ')}</small></div>`};
