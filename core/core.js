@@ -10,3 +10,9 @@ parts(){const D=G.D,h=G.heroes[D.hero],E={atk:0,hp:0,def:0};
  return{h:{hp:h.hp,atk:h.atk,def:h.def,crit:.05,as:h.as},e:E,t:G.talParts()}},
 stats(){const q=G.parts(),a=q.h,e=q.e,t=q.t;
  return{hp:a.hp+e.hp+t.hp,atk:a.atk+e.atk+t.atk,def:a.def+e.def+t.def,crit:a.crit+t.crit,as:1+t.as,reg:t.reg,gold:1+t.gold}}};
+
+G.cap={melee:130,ranged:300};// giới hạn tầm đánh tối đa
+G.reach=(h,m)=>Math.min(G.cap[h.st=='melee'?'melee':'ranged'],h.range+(h.st=='melee'?(m-1)*15:0));
+G.img={};
+G.pic=s=>{if(!s)return null;if(!G.img[s]){const i=new Image();i.src=s;G.img[s]=i}return G.img[s]};
+G.art=(h,px)=>h.img?`<img src="${h.img}" alt="" style="height:${px}px;object-fit:contain;filter:drop-shadow(0 4px 8px #0008)">`:`<span style="font-size:${Math.min(px*.7|0,64)}px">${h.ic}</span>`;

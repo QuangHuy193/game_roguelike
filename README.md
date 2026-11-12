@@ -17,7 +17,7 @@ yêu cầu mới 1 (đã chạy)
 - thêm nút để xem tất cả chỉ số của nhân vật ở mục trang bị, chia ra thành chỉ số từ trang bị, chỉ số từ thiên phú, chỉ số từ anh hùng, tổng chỉ số
 - trong trận chiến các đòn crit sẽhiện  số sát thương màu đỏ và to hơn các đòn đánh thường 1 chút
 
-yêu cầu mới 2
+yêu cầu mới 2 (đã chạy)
 - thay ảnh anh hùng trong tab anh hùng bằng ảnh trong assets/hero, vào trận cắt khuôn mặt hình tròn thay cho emoji
 - thêm các anh hùng mới tương ứng số ảnh
 - các kỹ năng trong trận như "đa tiễn" sửa lại mô tả "thành +1 đạn (anh hùng tầm ngắn: +tầm đánh)" để phù hợp cho 2 loại anh hùng tầm ngắn và xa
