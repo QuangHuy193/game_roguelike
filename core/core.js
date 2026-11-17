@@ -1,6 +1,6 @@
 const G={heroes:{},ui:{},ic:{atk:'⚔️',hp:'❤️',def:'🛡️'},
 rar:[['Cơ bản','#ddd',1],['Tốt','#4c4',1.5],['Hiếm','#4af',2.2],['Sử thi','#b5f',3.2],['Huyền thoại','#fb2',5]],
-D:{gold:0,gem:150,rc:0,exp:0,lv:1,ch:1,hero:null,own:[],inv:[],eq:{},tal:{},aux:{}},
+D:{gold:0,gem:150,rc:0,exp:0,lv:1,ch:1,hero:null,own:[],inv:[],eq:{},tal:{},aux:{},slots:25},
 need:l=>100*l,
 load(){try{Object.assign(G.D,JSON.parse(localStorage.getItem('dtah')||'{}'))}catch(e){}},
 save(){try{localStorage.setItem('dtah',JSON.stringify(G.D))}catch(e){}},

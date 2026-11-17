@@ -83,7 +83,7 @@ function choose(){pause=1;pk=[...G.skills].sort(()=>Math.random()-.5).slice(0,3)
  ov.classList.remove('hide')}
 function end(w){run=false;const D=G.D,o=D.lv,
  g=(w?800*ch:0)+coins,m=w?30+10*ch:0,x=w?100+50*ch:rm*5,r=w?1+ch:0,its=w?[G.drop(ch),...(ch>1?[G.drop(ch)]:[])]:[];
- D.gold+=g;D.gem+=m;D.rc+=r;G.addExp(x);D.inv.push(...its);if(w&&ch==D.ch)D.ch++;G.save();
+ D.gold+=g;D.gem+=m;D.rc+=r;G.addExp(x);its.forEach(G.addItem);if(w&&ch==D.ch)D.ch++;G.save();
  ov.innerHTML=`<h1>${w?'🏆 Qua chương '+ch+'!':'💀 Thất bại'}</h1><div class=card style="text-align:left;min-width:240px"><b>${w?'🎁 Quà chương':'Thu được'}</b><br>🪙 +${g}<br>💎 +${m}<br>🔴 +${r}<br>✨ EXP +${x}${its.map(i=>'<br>'+G.slots[i.s][0]+' '+G.slots[i.s][1]+' ('+G.rar[i.r][0]+')').join('')}${D.lv>o?'<br>🎉 Tài khoản lên cấp '+D.lv+(D.lv>=2&&o<2?' · mở Trang bị':'')+(D.lv>=3&&o<3?' · mở Thiên phú':''):''}</div><button class=b onclick="G.battle.exit()">Về sảnh</button>`;
  ov.classList.remove('hide')}
 G.battle={
