@@ -23,7 +23,7 @@ yêu cầu mới 2 (đã chạy)
 - các kỹ năng trong trận như "đa tiễn" sửa lại mô tả "thành +1 đạn (anh hùng tầm ngắn: +tầm đánh)" để phù hợp cho 2 loại anh hùng tầm ngắn và xa
 - thêm giới hạn tầm đánh tối đa cho cả anh hùng tầm ngắn và xa
 
-yêu cầu mới 3
+yêu cầu mới 3 (đã chạy)
 tái cấu trúc UI
  - Tab cố định phía dưới chia làm 5 tab lần lượt là : cửa hàng, nhân vật, trang chủ, tài năng, khác. Dùng icon đại diện cho chữ
  - ở tab cửa hàng có nhiều phần, phần thứ nhất có 2 chỗ mở rương cao cấp và thường xếp thành 2 hàng, dùng chìa khóa vàng và bạc. mỗi rương có nút x1 và x10 nằm cùng 1 hàng dưới rương. x1 300 ngọc, x10 2700 ngọc. phần dưới là các ô quy đổi ngọc thành vàng gồm 6 ô với mệnh giá tăng dần chia thành 2 hàng mỗi hàng 3 ô

@@ -4,7 +4,7 @@ html,body{height:100%;background:#0d0f17;color:#eee;font:14px system-ui,sans-ser
 #top{padding:8px 10px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;background:#232740;font-weight:600}
 .bar{flex:1 1 100%;height:8px;background:#000;border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:#4af}
 #main{flex:1;overflow:auto;padding:10px}
-#nav{display:flex}#nav button{flex:1;padding:14px 0;background:#232740;color:#aab;border:0;font-size:13px}#nav .on{background:#39407a;color:#fff}
+#nav{display:flex;gap:8px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:#14162a}#nav button{flex:1;padding:8px 0;border:0;border-radius:14px;background:#2a2f4d;font-size:26px}#nav .on{background:linear-gradient(135deg,#e8a82a,#d9602b)}#nav .lk{opacity:.5}
 .card{background:#2a2f4d;border-radius:10px;padding:10px;margin-bottom:8px}
 button.b{background:#e8a82a;color:#111;border:0;border-radius:8px;padding:9px 14px;font-weight:700;font-size:14px}
 button.b:disabled{opacity:.4}
@@ -17,3 +17,12 @@ canvas{touch-action:none;background:#000}
 .st{width:100%;border-collapse:collapse;margin-top:10px;font-size:12px}
 .st th{color:#aab;font-weight:600}.st td,.st th{border-bottom:1px solid #3a4070;padding:5px 3px;text-align:right}
 .st td:first-child{text-align:left}.st td:last-child{font-weight:700;color:#fd5}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.cell{aspect-ratio:1;border:2px solid #3a4070;border-radius:8px;background:#222642;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:20px;line-height:1.15;text-align:center}
+.cell small{font-size:10px}
+.hr{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.col{display:flex;flex-direction:column;gap:8px;width:58px}.col .cell{width:58px}
+.row{display:flex;gap:8px;justify-content:center;margin-top:8px}
+.sub{display:flex;gap:6px;margin-bottom:8px}.sub button{flex:1;padding:8px;border:0;border-radius:8px;background:#2a2f4d;color:#ccc}.sub .on{background:#39407a;color:#fff}
+.sm{background:#2a2f4d;color:#fff;border:0;border-radius:6px;padding:6px 9px;font-size:14px}
+.hd{margin:14px 0 6px;font-weight:700;color:#cdd}
