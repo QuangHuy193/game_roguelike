@@ -22,3 +22,13 @@ yêu cầu mới 2 (đã chạy)
 - thêm các anh hùng mới tương ứng số ảnh
 - các kỹ năng trong trận như "đa tiễn" sửa lại mô tả "thành +1 đạn (anh hùng tầm ngắn: +tầm đánh)" để phù hợp cho 2 loại anh hùng tầm ngắn và xa
 - thêm giới hạn tầm đánh tối đa cho cả anh hùng tầm ngắn và xa
+
+yêu cầu mới 3
+tái cấu trúc UI
+ - Tab cố định phía dưới chia làm 5 tab lần lượt là : cửa hàng, nhân vật, trang chủ, tài năng, khác. Dùng icon đại diện cho chữ
+ - ở tab cửa hàng có nhiều phần, phần thứ nhất có 2 chỗ mở rương cao cấp và thường xếp thành 2 hàng, dùng chìa khóa vàng và bạc. mỗi rương có nút x1 và x10 nằm cùng 1 hàng dưới rương. x1 300 ngọc, x10 2700 ngọc. phần dưới là các ô quy đổi ngọc thành vàng gồm 6 ô với mệnh giá tăng dần chia thành 2 hàng mỗi hàng 3 ô
+ - tab nhân vật chia làm 2 phần: phần nhân vật và túi đồ. 
+ - phần nhân vật gồm chia làm 2 phần, phần trên ảnh nhân vật chính giữa 2 bên mỗi bên 3 ô trang bị, trái gồm: vũ khí, nhẫn, găng, phải gồm: giáp, vòng, giày. Phần dưới 1 tab nhỏ các tính năng sẽ thêm sau tạm để 1, 2, 3
+ - phần túi đồ trên cùng có các thanh tiêu đề Trang bị, Vật phẩm, bấm vào sẽ đổi túi qua phần tương ứng, bên phải thanh này là nút sắp xếp và số ô với dấu cộng để mua thêm ô, phía dưới là túi đồ dạng ô lưới mặc định 5 ô 1 hàng, gồm 5 hàng.
+ - tab trang chủ tạm giữa như tab chiến đấu hiện tại, 2 tab còn lại tạm thời chỉ cần hiện chữ "đang cập nhật"
+ - Truy cập https://github.com/QuangHuy193/cultivation_idle để tham khảo
